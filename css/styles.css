@@ -50,7 +50,26 @@ main {
     gap: 20px;
 }
 
-.product-grid img {
+.product-card {
+    text-align: center;
+}
+
+.product-card img {
     width: 100%;
     height: auto;
+    border-radius: 5px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.product-card h2 {
+    margin-top: 10px;
+}
+
+.product-card p {
+    margin-top: 5px;
+}
+
+.product-card .btn {
+    margin-top: 10px;
 }
