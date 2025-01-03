@@ -39,8 +39,61 @@ main {
     border-radius: 5px;
     margin-right: 10px;
 }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 
-.btn:hover {
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent any overflow from child elements */
+    height: 350px; /* Keep uniform height */
+}
+
+.product-card img {
+    width: 150px;
+    height: 150px; /* Uniform image size */
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 1em;
+    margin: 10px 0; /* Consistent spacing */
+}
+
+.product-card .btn {
+    margin-top: -5px !important;
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.product-card .btn:hover 
+{
+    background-color: #45a049;
+}.btn:hover
+{
     background-color: #555;
 }
 
@@ -73,3 +126,10 @@ main {
 .product-card .btn {
     margin-top: 10px;
 }
+
+
+
+
+
+
+
