@@ -3,117 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout - Ronin's Produce Shop</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
-
-    header {
-      background-color: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #333;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    th, td {
-      text-align: left;
-      padding: 10px;
-      border: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    .total {
-      text-align: right;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    .checkout-btn {
-      display: block;
-      width: 100%;
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    .checkout-btn:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <header>
-    <h1>Ronin's Produce Shop</h1>
+    <h1>Checkout</h1>
   </header>
 
-  <div class="container">
-    <h2>Items in Your Cart</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Apple</td>
-          <td>3</td>
-          <td>$1.00</td>
-          <td>$3.00</td>
-        </tr>
-        <tr>
-          <td>Banana</td>
-          <td>2</td>
-          <td>$0.50</td>
-          <td>$1.00</td>
-        </tr>
-        <tr>
-          <td>Orange</td>
-          <td>5</td>
-          <td>$0.80</td>
-          <td>$4.00</td>
-        </tr>
-      </tbody>
-    </table>
+  <main>
+    <section class="checkout-form">
+      <h2>Billing Information</h2>
 
-    <div class="total">
-      <strong>Total: $8.00</strong>
-    </div>
+      <form id="checkout-form" action="/submit-order" method="POST">
+        
+        <!-- Customer Info -->
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
 
-    <a href="#" class="checkout-btn">Proceed to Checkout</a>
-  </div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Shipping Address</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <!-- Payment Info -->
+        <h3>Payment Information</h3>
+        <label for="card-number">Card Number</label>
+        <input type="text" id="card-number" name="card-number" placeholder="xxxx xxxx xxxx xxxx" required>
+
+        <label for="expiry-date">Expiry Date</label>
+        <input type="month" id="expiry-date" name="expiry-date" required>
+
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" required>
+
+        <!-- Submit Button -->
+        <button type="submit">Complete Purchase</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Company</p>
+  </footer>
+
 </body>
 </html>
