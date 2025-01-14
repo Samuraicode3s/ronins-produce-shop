@@ -4,9 +4,10 @@ const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { v4: uuidv4 } = require("uuid");
-
+const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 require("dotenv").config();
 AWS.config.update({
   region: process.env.AWS_REGION,
